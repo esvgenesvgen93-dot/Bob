@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  height: 100vh;
+
+  /* Background image */
+  background-image: url("windows-wallpaper.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Chat container only for positioning */
+#chat-container {
+  position: relative;
+}
+
+/* Face image — truly centered */
+#face {
+  width: 650px; /* medium-large size */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* center horizontally */
+  z-index: 1;
+}
+
+/* Speech bubble — floating next to face */
+#response-bubble {
+  position: absolute;
+  left: 600px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 12px 15px;
+  border-radius: 15px;
+  max-width: 180px;   /* narrower bubble */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+
+  animation: float 2s ease-in-out infinite;
+  z-index: 2;
+}
+
+
+
+/* Float animation */
+@keyframes float {
+  0% { transform: translateY(-50%); }
+  50% { transform: translateY(calc(-50% - 12px)); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Input box fixed at bottom center */
+#input {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  padding: 10px;
+  font-size: 16px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+
